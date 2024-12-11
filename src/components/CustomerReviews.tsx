@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
-
-import React, { useState } from "react";
+import { integralCF } from "@/app/ui/fonts";
+import { cn } from "@/lib/utils";
+import React, { useState, useEffect } from "react";
 
 const testimonials = [
   {
@@ -33,36 +34,54 @@ const testimonials = [
 
 const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 768); // Check for large screen
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      (prevIndex + 3) % testimonials.length
+    setCurrentIndex(
+      (prevIndex) => (prevIndex + (isLargeScreen ? 3 : 1)) % testimonials.length
     );
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      (prevIndex - 3 + testimonials.length) % testimonials.length
+    setCurrentIndex(
+      (prevIndex) =>
+        (prevIndex - (isLargeScreen ? 3 : 1) + testimonials.length) %
+        testimonials.length
     );
   };
 
-  const visibleTestimonials = testimonials.slice(
-    currentIndex,
-    currentIndex + 3
-  );
+  const visibleTestimonials = isLargeScreen
+    ? testimonials.slice(currentIndex, currentIndex + 3)
+    : [testimonials[currentIndex]];
 
-  // If less than 3 testimonials remain, append from the start
-  if (visibleTestimonials.length < 3) {
+  // Handle wrapping for large screens
+  if (isLargeScreen && visibleTestimonials.length < 3) {
     visibleTestimonials.push(
       ...testimonials.slice(0, 3 - visibleTestimonials.length)
     );
   }
 
   return (
-    <div className="max-w-5xl mx-auto p-6">
+    <div className="max-w-screen-xl mx-auto p-6 mt-14">
       {/* Heading Section */}
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-3xl font-bold text-left">OUR HAPPY CUSTOMERS</h2>
+        <h2
+          className={cn("text-3xl font-bold text-left", integralCF.className)}
+        >
+          OUR HAPPY CUSTOMERS
+        </h2>
         <div className="flex gap-2">
           {/* Left Arrow Button */}
           <button
@@ -82,18 +101,26 @@ const Testimonials: React.FC = () => {
       </div>
 
       {/* Cards Section */}
-      <div className="flex gap-6 justify-center">
+      <div
+        className={`flex gap-6 justify-center ${
+          isLargeScreen ? "flex-row" : "flex-col"
+        }`}
+      >
         {visibleTestimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="bg-white border border-gray-200 rounded-lg p-6 shadow-md max-w-sm"
+            className="bg-white border border-gray-200 rounded-xl p-6 shadow-md max-w-sm w-full text-start h-64 flex flex-col justify-between"
           >
-            <div className="flex items-center mb-4">
+            <div className="flex items-centre justify-start">
               <div className="text-yellow-400 text-lg">★★★★★</div>
+            </div>
+            <div className="flex items-center justify-start">
+              <p className="font-bold">{testimonial.name}</p>
               <span className="ml-2 text-green-500">✔</span>
             </div>
-            <p className="font-bold">{testimonial.name}</p>
-            <p className="text-gray-600 mt-2">{testimonial.review}</p>
+            <p className="text-gray-600 mt-2 line-clamp-4 overflow-hidden">
+              {testimonial.review}
+            </p>
           </div>
         ))}
       </div>
