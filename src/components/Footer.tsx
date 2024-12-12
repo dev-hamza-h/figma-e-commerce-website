@@ -28,7 +28,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative mt-32 bg-gray-100 pt-40 md:pt-32">
+    <footer className="relative mt-32 bg-gray-100 pt-40 md:pt-32 max-w-screen-2xl mx-auto">
       {/* Newsletter Section */}
       <div className="absolute -top-24 left-1/2 w-full max-w-[1240px] -translate-x-1/2 px-4">
         <div className="rounded-[32px] bg-black p-6 md:p-8">
