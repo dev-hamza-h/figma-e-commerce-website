@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
  
+
+
+@media (max-width: 640px) {
+    .flex {
+      gap: 1rem; /* چھوٹی اسکرین پر اسپیس کو زبردستی نافذ کرے گا */
+    }
+  }
+  

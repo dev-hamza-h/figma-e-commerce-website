@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero"
-import NewArrivals from "@/components/NewArrivals"
-import TopSeeling from "@/components/TopSelling"
+import NewArrivals from "@/components/product/NewArrivals"
+import TopSeeling from "@/components/product/TopSelling"
 import BrowseByStyle from "@/components/BrowseByStyle"
 import Testimonials from "@/components/CustomerReviews"
 

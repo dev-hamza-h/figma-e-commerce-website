@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   FaShoppingCart,
@@ -9,8 +11,11 @@ import { Menu } from "lucide-react";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { integralCF } from "@/app/ui/fonts";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Header: React.FC = () => {
+  const router = useRouter();
   return (
     <header className="border-b shadow-md sticky top-0 left-0 max-w-screen-2xl z-50 mx-auto">
       {/* Top bar */}
@@ -36,10 +41,14 @@ const Header: React.FC = () => {
               {/* Sheet Content */}
               <div className="flex flex-col space-y-4">
                 <div className="text-2xl font-extrabold">SHOP.CO</div>
-                <a href="#" className="flex items-center hover:text-black">
+                <a
+                  onClick={() => router.push("/shop-btn-product")}
+                  className="flex items-center hover:text-black cursor-pointer"
+                >
                   Shop
                   <FaChevronDown className="ml-1 text-sm" />
                 </a>
+
                 <a href="#" className="flex items-center hover:text-black">
                   On Sale
                 </a>
@@ -66,10 +75,14 @@ const Header: React.FC = () => {
 
         {/* Middle: Navigation Links for Large Screens */}
         <nav className="hidden md:flex flex-1 justify-center space-x-6 text-gray-700">
-          <a href="#" className="flex items-center hover:text-black">
+          <a
+            onClick={() => router.push("/shop-btn-product")}
+            className="flex items-center hover:text-black cursor-pointer"
+          >
             Shop
-            <FaChevronDown className="ml-1 text-xm" />
+            <FaChevronDown className="ml-1 text-sm" />
           </a>
+
           <a href="#" className="flex items-center hover:text-black">
             On Sale
           </a>
@@ -97,9 +110,9 @@ const Header: React.FC = () => {
           </div>
 
           {/* Icons */}
-          <button className="hover:text-black">
+          <Link href="/cart" className="hover:text-black">
             <FaShoppingCart className="w-6 h-6" />
-          </button>
+          </Link>
           <button className="hover:text-black">
             <FaUser className="w-6 h-6" />
           </button>

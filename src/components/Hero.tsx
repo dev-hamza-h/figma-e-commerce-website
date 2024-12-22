@@ -1,3 +1,5 @@
+"use client"
+
 import HeroImg from "@/assets/images/couple.png";
 import Versac from "@/assets/images/versace.png";
 import Zara from "@/assets/images/zara.png";
@@ -6,12 +8,14 @@ import Prada from "@/assets/images/prada.png";
 import Calvin from "@/assets/images/calvin.png";
 import { integralCF } from "@/app/ui/fonts";
 import { cn } from "@/lib/utils";
-
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function HeroSection() {
+  const router = useRouter();
+
   return (
-    <section className="bg-gray-100 py-12 px-2 md:px-12 lg:px-16 max-w-screen-2xl mx-auto ">
+    <section className="bg-gray-100 py-12 px-2 md:px-12 lg:px-16 max-w-screen-2xl mx-auto">
       <div className=" grid md:grid-cols-2 items-center gap-8 ">
         {/* Left Content */}
         <div className="text-center md:text-left">
@@ -24,16 +28,19 @@ export default function HeroSection() {
             FIND CLOTHES <br /> THAT MATCHES <br /> YOUR STYLE
           </h1>
           <p className="text-gray-600 text-start mt-4 text-lg">
-            Browse through our diverse range of meticulouslmty crafted garments,
+            Browse through our diverse range of meticulously crafted garments,
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
-          <button className="mt-6 px-20 py-3 md:px-8 md:py-3 bg-black text-white rounded-full text-lg font-medium hover:bg-gray-800">
+          <button
+            onClick={() => router.push("/shop-btn-product")}
+            className="mt-6 px-20 py-3 md:px-8 md:py-3 bg-black text-white rounded-full text-lg font-medium hover:bg-gray-800"
+          >
             Shop Now
           </button>
 
           {/* Stats Section */}
-          <div className="mt-12 grid grid-cols-2   md:grid md:grid-cols-3 gap-4 text-center md:ml-[-40px] ">
+          <div className="mt-12 grid grid-cols-2 md:grid md:grid-cols-3 gap-4 text-center md:ml-[-40px] ">
             <div>
               <h2 className="text-lg md:text-2xl font-bold text-gray-900">
                 200+
@@ -105,9 +112,7 @@ export default function HeroSection() {
   );
 }
 
-
-  {/* StarIcon Content */}
-
+{/* StarIcon Content */}
 function StarIcon({ className }: { className?: string }) {
   return (
     <svg
