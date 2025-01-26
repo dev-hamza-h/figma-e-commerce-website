@@ -33,7 +33,7 @@ const NewArrivals = () => {
       >
         {products.map((product) => (
           <div key={product._id} className="p-4">
-                        <Link href={`/product/${product._id}`}>
+                         
                <Image
                 src={product.image}
                 alt={product.name}
@@ -58,7 +58,7 @@ const NewArrivals = () => {
                   {product.discountPercent}% OFF
                 </p>
               )}
-              </Link>
+              
            </div>
         ))}
       </div>
