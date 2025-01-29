@@ -1,3 +1,5 @@
+𝐌𝐚𝐫𝐤𝐞𝐭𝐩𝐥𝐚𝐜𝐞 𝐁𝐮𝐢𝐥𝐝𝐞𝐫 𝐇𝐚𝐜𝐤𝐚𝐭𝐡𝐨𝐧 2025 😇
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
