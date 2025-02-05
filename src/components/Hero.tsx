@@ -17,7 +17,7 @@ export default function HeroSection() {
   return (
     <section className="bg-gray-100 py-12 px-2 md:px-12 lg:px-16 max-w-screen-2xl mx-auto">
       <div className=" grid md:grid-cols-2 items-center gap-8 ">
-        {/* Left Content */}
+        {/* Left Contents */}
         <div className="text-center md:text-left">
           <h1
             className={cn(
