@@ -20,7 +20,7 @@ const ReviewCard = ({ name, date, rating, comment }: ReviewProps) => {
   };
 
   return (
-    <div className="border rounded-xl p-4 bg-white relative shadow-sm hover:shadow-lg transition-shadow">
+    <div className="border rounded-xl p-4 bg-white relative shadow-sm hover:shadow-lg transition-shadow ">
       {/* Top Section */}
       <div className="flex justify-between items-center">
         {/* Rating */}

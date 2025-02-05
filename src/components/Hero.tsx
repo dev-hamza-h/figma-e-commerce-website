@@ -33,7 +33,7 @@ export default function HeroSection() {
             style.
           </p>
           <button
-            onClick={() => router.push("/shop-btn-product")}
+            onClick={() => router.push("/shopbtn-product")}
             className="mt-6 px-20 py-3 md:px-8 md:py-3 bg-black text-white rounded-full text-lg font-medium hover:bg-gray-800"
           >
             Shop Now

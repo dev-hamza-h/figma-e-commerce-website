@@ -3,8 +3,7 @@ import NewArrivals from "@/components/product/NewArrivals"
 import TopSeeling from "@/components/product/TopSelling"
 import BrowseByStyle from "@/components/BrowseByStyle"
 import Testimonials from "@/components/CustomerReviews"
-
-
+ 
 
 export default function Home(){
   return( 
@@ -14,7 +13,7 @@ export default function Home(){
       <TopSeeling/>
       <BrowseByStyle/>
       <Testimonials/>
- 
+       
     </div>
   )
 }

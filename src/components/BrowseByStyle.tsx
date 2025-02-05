@@ -3,6 +3,7 @@ import Casual from "@/assets/images/casual.png";
 import Formal from "@/assets/images/formal.png";
 import Party from "@/assets/images/party.png";
 import Gym from "@/assets/images/gym.png";
+import Link from "next/link";
 
 const DressStyle = () => {
   return (
@@ -13,6 +14,7 @@ const DressStyle = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 ">
         {/* Casual (Small Card) */}
         <div className="relative bg-white rounded-[20px] overflow-hidden shadow-md w-full h-[289px] md:ml-36 ">
+        <Link href="/shopbtn-product">
           <Image
             src={Casual}
             alt="Casual"
@@ -22,9 +24,11 @@ const DressStyle = () => {
           <p className="absolute top-2 left-2 text-lg font-bold text-black">
             Casual
           </p>
+          </Link>
         </div>
         {/* Formal (Large Card) */}
         <div className="relative bg-white rounded-[20px] overflow-hidden shadow-md w-full h-[289px] sm:col-span-2 md:col-span-2 md:ml-36">
+        <Link href="/shopbtn-product">
           <Image
             src={Formal}
             alt="Formal"
@@ -34,9 +38,11 @@ const DressStyle = () => {
           <p className="absolute top-2 left-2 text-lg font-bold text-black">
             Formal
           </p>
+          </Link>
         </div>
         {/* Party (Large Card) */}
         <div className="relative bg-white rounded-[20px] overflow-hidden shadow-md w-full h-[289px] sm:col-span-2 md:col-span-2 md:ml-36">
+        <Link href="/shopbtn-product">
           <Image
             src={Party}
             alt="Party"
@@ -46,9 +52,11 @@ const DressStyle = () => {
           <p className="absolute top-2 left-2 text-lg font-bold text-black">
             Party
           </p>
+          </Link>
         </div>
         {/* Gym (Small Card) */}
         <div className="relative bg-white rounded-[20px] overflow-hidden shadow-md w-full h-[289px] md:ml-36">
+        <Link href="/shopbtn-product">
           <Image
             src={Gym}
             alt="Gym"
@@ -58,6 +66,7 @@ const DressStyle = () => {
           <p className="absolute top-2 left-2 text-lg font-bold text-black">
             Gym
           </p>
+          </Link>
         </div>
       </div>
     </div>
